@@ -1,0 +1,48 @@
+.count {
+  color: #999;
+  font-size: 12px;
+  padding: 3px 10px;
+  text {
+    float: right;
+  }
+}
+.title {
+  color: #111;
+  font-size: 14px;
+  padding: 3px 10px;
+}
+.cell {
+  display: flex;
+  align-items: center; /*垂直居中*/
+  justify-content: center; /*水平居中*/
+  font-size: 14px;
+  color: grey;
+  height: 50px;
+  padding: 0 20px;
+  .icon {
+    text-align: left;
+    flex: 1;
+    display: flex;
+    .i-icon {
+      display: flex;
+      align-items: center; /*垂直居中*/
+      justify-content: center; /*水平居中*/
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      border-radius: 50%;
+      background: #F8F8F8;
+    }
+  }
+  .content {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(245, 245, 245, 1);
+    flex: 6;
+    .ft {
+      margin-bottom: 4px;
+      text {
+        float: right;
+      }
+    }
+  }
+}
