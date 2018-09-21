@@ -1,8 +1,9 @@
-# p3-mpvue
+## 记账小程序
 
-> 基于mpvue框架开发
-> 主色调 ：#f9d348 / rgba(249, 211, 72, 1)
+> 基于[mpvue](http://mpvue.com/mpvue/)框架开发
 > UI库:https://weapp.iviewui.com/docs/guide/start
+> [小程序官网](https://developers.weixin.qq.com/miniprogram/dev/)
+> 主色调 ：#f9d348 / rgba(249, 211, 72, 1)
 
 ## Build Setup
 
