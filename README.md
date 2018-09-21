@@ -22,4 +22,4 @@ npm run build --report
 ```
 
 ## 图例
-<img src="https://s1.ax1x.com/2018/09/21/inrGse.jpg"></img>
+<img width="500" style="margin:0 auto" src="https://s1.ax1x.com/2018/09/21/inrGse.jpg"></img>
