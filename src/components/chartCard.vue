@@ -21,14 +21,14 @@
  */
 
 export default {
-  props: ['info'],
+  props: ['info', 'count'],
   data() {
     return {}
   },
 
   computed: {
     rate: function() {
-      return (this.info.rate * 100).toFixed(1)
+      return (this.info.count * 100 / this.count).toFixed(1)
     }
   },
 

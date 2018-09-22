@@ -11,7 +11,8 @@ export default {
       // 'i-input': '../../../static/iview/input/index',
       'i-icon': '../../../static/iview/icon/index',
       'i-tabs': '../../../static/iview/tabs/index',
-      'i-tab': '../../../static/iview/tab/index'
+      'i-tab': '../../../static/iview/tab/index',
+      'i-load-more': '../../../static/iview/load-more/index'
     }
   }
 }

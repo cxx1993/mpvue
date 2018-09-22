@@ -6,10 +6,10 @@
             @change="handleChangeScroll" >
             <i-tab v-for="item in iTabList" :key="item.key" :title="item.title"></i-tab>
         </i-tabs>
-        <div class="count">总支出：492.10<text>平均值：492.10</text></div>
+        <div class="count">总支出：{{sum}}<text>平均值：{{avg}}</text></div>
         <div style="height:200px;text-align:center;line-height:200px;background:#efefef;">chart</div>    
         <div class="title">支出排行榜</div>
-        <scroll-view style="height:300px">
+        <scroll-view style="height:300px" scroll-y>
 
         <!-- <canvas 
             style="width:100%;height:35vh;"
@@ -21,12 +21,16 @@
         </canvas>
         <button type="primary" @click="updateData">更新数据</button> -->
 
-        <list-cell 
+        <list-cell
             v-for="(item,idx) in cellList" 
             :key="idx"
-            :info="item" 
+            :info="item"
+            :count="sum" 
         >
         </list-cell>
+        <div v-show="cellList.length===0">
+          <i-load-more tip="暂无数据" :loading="false" />
+        </div>
         </scroll-view>
     </div>
 </template>
@@ -34,7 +38,7 @@
 <script>
 import moment from 'moment'
 import cell from './chartCard'
-import https from './utils/https'
+import https from '../utils/https'
 import { weekFormat, monthFormat, yearFormat } from '../utils/chartUT'
 
 const { postReq } = https
@@ -49,21 +53,10 @@ export default {
     return {
       current_scroll: '',
       scrollLeft: 0,
+      sum: 0,
+      avg: 0,
       iTabList: [],
-      cellList: [
-        {
-          name: '日用',
-          stName: 'clock',
-          rate: 0.549,
-          count: 270
-        },
-        {
-          name: '日用2',
-          stName: 'clock',
-          rate: 0.19,
-          count: 10
-        }
-      ],
+      cellList: [], // 排行榜list
       sdate: '',
       edate: ''
     }
@@ -93,12 +86,13 @@ export default {
       }
       this.sdate = arrDate[0]
       this.edate = arrDate[1]
-      console.log(arrDate)
+      // console.log(arrDate)
     },
     // 滚动tab change
     handleChangeScroll({ target }) {
       this.current_scroll = target.key
       this.caculateDateRange()
+      this.getData()
     },
     // 初始获取tabbar的数据
     getTabList() {
@@ -198,7 +192,27 @@ export default {
       // })
     },
 
-    getData() {}
+    getData() {
+      const { periodType, sdate, edate } = this
+      let query = {
+        type: periodType,
+        sdate,
+        edate
+      }
+      postReq({
+        url: 'records/rank',
+        data: query,
+        cb: res => {
+          const { cellList, avg, sum } = res.result
+          this.cellList = cellList
+          this.avg = avg
+          this.sum = sum
+        },
+        fb: err => {
+          console.log(err)
+        }
+      })
+    }
   },
 
   components: {

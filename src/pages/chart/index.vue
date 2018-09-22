@@ -6,8 +6,8 @@
     >
     </switch-head>
     <p-content :type="type" :current="period" :periodType="0">0</p-content>
-    <!-- <p-content :type="type" :current="period" :periodType="1">1</p-content>
-    <p-content :type="type" :current="period" :periodType="2">2</p-content> -->
+    <p-content :type="type" :current="period" :periodType="1">1</p-content>
+    <p-content :type="type" :current="period" :periodType="2">2</p-content>
     
   </div>
 </template>
