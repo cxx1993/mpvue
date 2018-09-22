@@ -1,8 +1,9 @@
-# p3-mpvue
+## 记账小程序
 
-> 基于mpvue框架开发
-> 主色调 ：#f9d348 / rgba(249, 211, 72, 1)
-> UI库:https://weapp.iviewui.com/docs/guide/start
+- 基于[mpvue](http://mpvue.com/mpvue/)框架开发
+- UI库:https://weapp.iviewui.com/docs/guide/start
+- [小程序官网](https://developers.weixin.qq.com/miniprogram/dev/)
+- 主色调 ：#f9d348 / rgba(249, 211, 72, 1)
 
 ## Build Setup
 
@@ -20,4 +21,5 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 图例
+<img width="500" style="display:block;margin:0 auto" src="https://s1.ax1x.com/2018/09/21/inrGse.jpg"></img>
