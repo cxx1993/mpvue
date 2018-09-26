@@ -48,6 +48,7 @@ export const weekFormat = function(year, index) {
  * return: ['2015-02-12','2015-02-19']
  */
 export const monthFormat = function(year, month) {
+  month = month - 1
   month = Number(month)
   const from = new Date(year, month, 1)
   var to = new Date(year, month + 1, 1)
@@ -69,4 +70,37 @@ export const yearFormat = function(year) {
 
   to.setDate(to.getDate() - 1)
   return [moment(from).format('YYYY-MM-DD'), moment(to).format('YYYY-MM-DD')]
+}
+
+export const options = {
+  options: {
+    xAxis: {
+      type: 'category',
+      data: [],
+      axisLine: {
+        lineStyle: {
+          color: '#8d8d8d'
+        }
+      }
+    },
+    yAxis: {
+      type: 'value',
+      show: false
+    },
+    series: [
+      {
+        data: [],
+        type: 'line',
+        itemStyle: {
+          normal: {
+            color: '#f0c332', // 小圆点
+            lineStyle: {
+              color: '#272727',
+              width: 1
+            }
+          }
+        }
+      }
+    ]
+  }
 }
