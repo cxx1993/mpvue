@@ -51,16 +51,9 @@ export default {
     },
     bindPickerChange: function(e) {
       // 触发父级
-      // this.arrIdx = e.target.value
-      this.$emit('changeType', e.target.value)
+      this.$emit('changeType', Number(e.target.value))
     }
   },
-
-  // watch: {
-  //   period(newValue, oldValue) {
-  //     this.getTabList()
-  //   }
-  // },
 
   onLoad: function(e) {}
 }
