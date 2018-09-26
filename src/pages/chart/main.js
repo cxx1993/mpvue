@@ -12,7 +12,8 @@ export default {
       'i-icon': '../../../static/iview/icon/index',
       'i-tabs': '../../../static/iview/tabs/index',
       'i-tab': '../../../static/iview/tab/index',
-      'i-load-more': '../../../static/iview/load-more/index'
+      'i-load-more': '../../../static/iview/load-more/index',
+      'ec-canvas': '../../../static/ec-canvas/ec-canvas'
     }
   }
 }
